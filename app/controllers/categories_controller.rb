@@ -3,9 +3,8 @@ class CategoriesController < ApplicationController
 
   # GET /categories
   def index
-    @categories = Category.all
 
-    render json: @categories
+    render json: Category.all.to_json(include: [:flashcards])
   end
 
   # GET /categories/1
